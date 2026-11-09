@@ -25,6 +25,12 @@ OS name: "windows 11", version: "10.0", arch: "amd64", family: "windows"
 
 Тайланд оролтын шалгалт, `gpa()`-ийн хоосон утгын шалгалт, `scholarship()`-ийн доод шатны нөхцөлүүд шар харагдсан. `letterGrade()`-ийн C/D/F зам, `gpa()`-ийн C/D/F switch зам, exception мөрүүд болон 70/50/0 хувийн тэтгэлгийн мөрүүд улаан байв.
 
+## B — CFG ба 100% branch хамралт
+
+Оролтын алдаа, бүх үсгэн дүн, switch-ийн default зам, `scholarship()`-ийн богино холболттой нөхцөл бүрийг тусдаа тестээр шалгав. Нийт 19 тест шаардагдсан. `results/jacoco-B.csv`-д `BRANCH_MISSED = 0`, `BRANCH_COVERED = 41`, `LINE_MISSED = 0`, `LINE_COVERED = 25` гарсан тул Branch болон Line хамралт хоёул 100% болсон.
+
+![scholarship функцийн CFG](cfg.png)
+
 ## AI ашиглалт
 
 Codex-ийг даалгаврын заавар унших, тестийн хувилбарууд төлөвлөх, үр дүнг шалгахад ашигласан.
