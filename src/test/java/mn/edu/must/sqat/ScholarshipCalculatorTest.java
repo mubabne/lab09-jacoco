@@ -60,6 +60,41 @@ class ScholarshipCalculatorTest {
     }
 
     @Test
+    void letterGradeReturnsDAtLowerBoundary() {
+        assertEquals("D", calculator.letterGrade(60));
+    }
+
+    @Test
+    void letterGradeReturnsFJustBelowDBoundary() {
+        assertEquals("F", calculator.letterGrade(59.99));
+    }
+
+    @Test
+    void letterGradeReturnsDJustBelowCBoundary() {
+        assertEquals("D", calculator.letterGrade(69.99));
+    }
+
+    @Test
+    void letterGradeReturnsFAtMinimumScore() {
+        assertEquals("F", calculator.letterGrade(0));
+    }
+
+    @Test
+    void letterGradeReturnsAAtMaximumScore() {
+        assertEquals("A", calculator.letterGrade(100));
+    }
+
+    @Test
+    void letterGradeReturnsBJustBelowABoundary() {
+        assertEquals("B", calculator.letterGrade(89.99));
+    }
+
+    @Test
+    void letterGradeReturnsAAtLowerBoundary() {
+        assertEquals("A", calculator.letterGrade(90));
+    }
+
+    @Test
     void gpaRejectsNullScores() {
         assertThrows(IllegalArgumentException.class, () -> calculator.gpa(null));
     }
